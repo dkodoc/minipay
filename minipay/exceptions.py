@@ -1,5 +1,6 @@
 
-__all__ = ['TargetError', 'MethodError']
+__all__ = ['TargetError', 'MethodError', 'ModeError', 'ModelError', 'OpenidError',
+           'TooManyArgumentError', 'ProductIdError']
 
 
 class BaseMiniPayError(Exception):
@@ -11,4 +12,24 @@ class TargetError(Exception):
 
 
 class MethodError(Exception):
+    pass
+
+
+class ModeError(Exception):
+    pass
+
+
+class ModelError(Exception):
+    pass
+
+
+class OpenidError(Exception):
+    pass
+
+
+class ProductIdError(Exception):
+    pass
+
+
+class TooManyArgumentError(Exception):
     pass

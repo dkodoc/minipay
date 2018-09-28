@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6bf4f7e9-c4f7-4e83-a917-ac5d10a373bd" name="Default Changelist" comment="" />
+    <list default="true" id="6bf4f7e9-c4f7-4e83-a917-ac5d10a373bd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minipay/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/minipay/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minipay/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/minipay/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minipay/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/minipay/exceptions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minipay/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/minipay/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -9,40 +16,44 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/minipay$base.coverage" NAME="base Coverage Results" MODIFIED="1538068308137" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/minipay" />
-    <SUITE FILE_PATH="coverage/minipay$model.coverage" NAME="model Coverage Results" MODIFIED="1538068459370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/minipay" />
+    <SUITE FILE_PATH="coverage/minipay$base.coverage" NAME="base Coverage Results" MODIFIED="1538120008575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/minipay" />
+    <SUITE FILE_PATH="coverage/minipay$model.coverage" NAME="model Coverage Results" MODIFIED="1538120014125" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/minipay" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-716063958">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="10" />
+          <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="2" />
-          <entry key="project.open.time.5" value="3" />
-          <entry key="project.open.time.7" value="2" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.open.time.5" value="4" />
+          <entry key="project.open.time.7" value="3" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="gitignore" value="1" />
-          <entry key="py" value="6" />
+          <entry key="gitignore" value="2" />
+          <entry key="md" value="1" />
+          <entry key="py" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Git file" value="1" />
-          <entry key="Python" value="6" />
+          <entry key="Git file" value="2" />
+          <entry key="Markdown" value="1" />
+          <entry key="Python" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="5173" />
+          <entry key="py" value="12780" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="5173" />
+          <entry key="Python" value="12780" />
         </counts>
       </usages-collector>
     </session>
@@ -55,34 +66,36 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/minipay/base.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="21" column="25" lean-forward="true" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+            <state relative-caret-position="476">
+              <caret line="234" selection-start-line="234" selection-end-line="234" />
               <folding>
                 <element signature="e#17#40#0" expanded="true" />
-                <marker date="1538068459361" expanded="true" signature="244:249" ph="..." />
-                <marker date="1538068459361" expanded="true" signature="1970:2478" ph="..." />
-                <marker date="1538068459361" expanded="true" signature="2179:2227" ph="..." />
-                <marker date="1538068459361" expanded="true" signature="2392:2460" ph="..." />
-                <marker date="1538068459361" expanded="true" signature="2966:2990" ph="..." />
+                <marker date="1538121978181" expanded="true" signature="264:269" ph="..." />
+                <marker date="1538121978181" expanded="true" signature="1127:1133" ph="..." />
+                <marker date="1538121978181" expanded="true" signature="1204:1223" ph="..." />
+                <marker date="1538121978181" expanded="true" signature="2449:3546" ph="..." />
+                <marker date="1538121978181" expanded="true" signature="2816:3287" ph="..." />
+                <marker date="1538121978181" expanded="true" signature="3195:3287" ph="..." />
+                <marker date="1538121978181" expanded="true" signature="3456:3528" ph="..." />
+                <marker date="1538121978181" expanded="true" signature="4034:4058" ph="..." />
+                <marker date="1538121978181" expanded="true" signature="6012:8538" ph="..." />
+                <marker date="1538121978181" expanded="true" signature="7139:7158" ph="..." />
+                <marker date="1538121978181" expanded="true" signature="7275:7306" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/minipay/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/minipay/model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+            <state relative-caret-position="386">
+              <caret line="196" column="34" selection-start-line="196" selection-start-column="34" selection-end-line="196" selection-end-column="34" />
+              <folding>
+                <element signature="e#16#25#0" expanded="true" />
+                <marker date="1538121978197" expanded="true" signature="3840:8085" ph="..." />
+                <marker date="1538121978197" expanded="true" signature="7201:8085" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -90,10 +103,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/minipay/config.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+            <state relative-caret-position="-7">
+              <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
               <folding>
-                <marker date="1538029424773" expanded="true" signature="65:70" ph="..." />
+                <marker date="1538113510265" expanded="true" signature="65:70" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/minipay/exceptions.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-7">
+              <caret line="2" column="50" selection-start-line="2" selection-start-column="50" selection-end-line="2" selection-end-column="50" />
+              <folding>
+                <marker date="1538116790426" expanded="true" signature="173:178" ph="..." />
+                <marker date="1538116790426" expanded="true" signature="214:219" ph="..." />
+                <marker date="1538116790426" expanded="true" signature="255:260" ph="..." />
+                <marker date="1538116790426" expanded="true" signature="294:299" ph="..." />
+                <marker date="1538116790426" expanded="true" signature="334:339" ph="..." />
+                <marker date="1538116790426" expanded="true" signature="375:380" ph="..." />
+                <marker date="1538116790426" expanded="true" signature="419:431" ph="..." />
+                <marker date="1538116790426" expanded="true" signature="469:479" ph="..." />
               </folding>
             </state>
           </provider>
@@ -119,9 +151,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/minipay/__init__.py" />
         <option value="$PROJECT_DIR$/minipay/config.py" />
         <option value="$PROJECT_DIR$/minipay/exceptions.py" />
-        <option value="$PROJECT_DIR$/minipay/__init__.py" />
         <option value="$PROJECT_DIR$/minipay/model.py" />
         <option value="$PROJECT_DIR$/minipay/base.py" />
       </list>
@@ -134,8 +166,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="x" value="622" />
+    <option name="y" value="28" />
+    <option name="width" value="1085" />
+    <option name="height" value="977" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -143,7 +177,13 @@
         <expanded-state>
           <State />
           <State>
-            <id>Bitwise operation issuesJavaScript</id>
+            <id>Assignment issuesJavaScript</id>
+          </State>
+          <State>
+            <id>CoffeeScript</id>
+          </State>
+          <State>
+            <id>GeneralCoffeeScript</id>
           </State>
           <State>
             <id>GeneralJavaScript</id>
@@ -151,21 +191,7 @@
           <State>
             <id>JavaScript</id>
           </State>
-          <State>
-            <id>Potentially confusing code constructsJavaScript</id>
-          </State>
-          <State>
-            <id>Probable bugsJavaScript</id>
-          </State>
-          <State>
-            <id>Spelling</id>
-          </State>
         </expanded-state>
-        <selected-state>
-          <State>
-            <id>Spelling</id>
-          </State>
-        </selected-state>
       </profile-state>
     </entry>
   </component>
@@ -196,10 +222,16 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="ignore_missing_gitignore" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="tasks.servers" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -284,22 +316,23 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49907234" visible="true" weight="0.115015976" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49907234" weight="0.22577092" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.5009276" side_tool="true" weight="0.24947295" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.27425742" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.28118813" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.35742575" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.44653466" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32970297" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.280198" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -315,57 +348,91 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/minipay/exceptions.py">
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <marker date="1538031601223" expanded="true" signature="78:83" ph="..." />
-            <marker date="1538031601223" expanded="true" signature="119:124" ph="..." />
-            <marker date="1538031601223" expanded="true" signature="160:165" ph="..." />
-          </folding>
+        <state relative-caret-position="57">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/minipay/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/minipay/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+          <folding>
+            <marker date="1538113510265" expanded="true" signature="65:70" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/minipay/exceptions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="2" column="50" selection-start-line="2" selection-start-column="50" selection-end-line="2" selection-end-column="50" />
+          <folding>
+            <marker date="1538116790426" expanded="true" signature="173:178" ph="..." />
+            <marker date="1538116790426" expanded="true" signature="214:219" ph="..." />
+            <marker date="1538116790426" expanded="true" signature="255:260" ph="..." />
+            <marker date="1538116790426" expanded="true" signature="294:299" ph="..." />
+            <marker date="1538116790426" expanded="true" signature="334:339" ph="..." />
+            <marker date="1538116790426" expanded="true" signature="375:380" ph="..." />
+            <marker date="1538116790426" expanded="true" signature="419:431" ph="..." />
+            <marker date="1538116790426" expanded="true" signature="469:479" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/envs/minipay/lib/python3.7/site-packages/requests/exceptions.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/envs/minipay/lib/python3.7/site-packages/requests/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="45" column="13" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/minipay/base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="21" column="25" lean-forward="true" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+        <state relative-caret-position="476">
+          <caret line="234" selection-start-line="234" selection-end-line="234" />
           <folding>
             <element signature="e#17#40#0" expanded="true" />
-            <marker date="1538068459361" expanded="true" signature="244:249" ph="..." />
-            <marker date="1538068459361" expanded="true" signature="1970:2478" ph="..." />
-            <marker date="1538068459361" expanded="true" signature="2179:2227" ph="..." />
-            <marker date="1538068459361" expanded="true" signature="2392:2460" ph="..." />
-            <marker date="1538068459361" expanded="true" signature="2966:2990" ph="..." />
+            <marker date="1538121978181" expanded="true" signature="264:269" ph="..." />
+            <marker date="1538121978181" expanded="true" signature="1127:1133" ph="..." />
+            <marker date="1538121978181" expanded="true" signature="1204:1223" ph="..." />
+            <marker date="1538121978181" expanded="true" signature="2449:3546" ph="..." />
+            <marker date="1538121978181" expanded="true" signature="2816:3287" ph="..." />
+            <marker date="1538121978181" expanded="true" signature="3195:3287" ph="..." />
+            <marker date="1538121978181" expanded="true" signature="3456:3528" ph="..." />
+            <marker date="1538121978181" expanded="true" signature="4034:4058" ph="..." />
+            <marker date="1538121978181" expanded="true" signature="6012:8538" ph="..." />
+            <marker date="1538121978181" expanded="true" signature="7139:7158" ph="..." />
+            <marker date="1538121978181" expanded="true" signature="7275:7306" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/minipay/model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/minipay/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+        <state relative-caret-position="386">
+          <caret line="196" column="34" selection-start-line="196" selection-start-column="34" selection-end-line="196" selection-end-column="34" />
           <folding>
-            <marker date="1538029424773" expanded="true" signature="65:70" ph="..." />
+            <element signature="e#16#25#0" expanded="true" />
+            <marker date="1538121978197" expanded="true" signature="3840:8085" ph="..." />
+            <marker date="1538121978197" expanded="true" signature="7201:8085" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/minipay/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
