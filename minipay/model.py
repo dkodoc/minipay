@@ -1,5 +1,4 @@
 # coding: utf-8
-
 import re
 import base64
 from hashlib import md5
@@ -9,7 +8,10 @@ from minipay.base import BaseMiniPay, BaseNotification
 
 
 class UnifiedOrder(BaseMiniPay):
-    """"""
+    """
+    小程序统一下单功能
+    小程序支付官方文档链接: https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_1
+    """
 
     def __init__(self, out_trade_no, body, total_fee,
                  device_info=None, detail=None, attach=None, fee_type=None,
@@ -17,8 +19,8 @@ class UnifiedOrder(BaseMiniPay):
                  openid=None, spbill_create_ip=None, trade_type=None, notify_url=None,
                  product_id=None, **kwargs):
         super(UnifiedOrder, self).__init__(**kwargs)
-        self.target = kwargs.get('target') or "https://api.mch.weixin.qq.com/pay/unifiedorder"
-        self.notify_url = notify_url or "https://www.duodongzhen.com/test/notifications/payment/"
+        self.target = kwargs.get('target') or self.config['api_unified_order']
+        self.notify_url = notify_url or self.config['payment_notify_url']
         self.request_data = {
             'appid': self.config['app_id'],
             'mch_id': self.config['mch_id'],
@@ -55,11 +57,11 @@ class UnifiedOrder(BaseMiniPay):
 
 
 class OrderQuery(BaseMiniPay):
-    """"""
+    """订单查询功能类"""
 
     def __init__(self, out_trade_no=None, transaction_id=None, **kwargs):
         super(OrderQuery, self).__init__(**kwargs)
-        self.target = kwargs.get('target') or "https://api.mch.weixin.qq.com/pay/orderquery"
+        self.target = kwargs.get('target') or self.config['api_order_query']
         self.request_data = {
             'appid': self.config['app_id'],
             'mch_id': self.config['mch_id'],
@@ -79,11 +81,10 @@ class OrderQuery(BaseMiniPay):
 
 
 class CloseOrder(BaseMiniPay):
-    """"""
-
+    """关闭订单功能类"""
     def __init__(self, out_trade_no, **kwargs):
         super(CloseOrder, self).__init__(**kwargs)
-        self.target = kwargs.get('target') or "https://api.mch.weixin.qq.com/pay/closeorder"
+        self.target = kwargs.get('target') or self.config['api_close_order']
         self.request_data = {
             'appid': self.config['app_id'],
             'mch_id': self.config['mch_id'],
@@ -95,14 +96,13 @@ class CloseOrder(BaseMiniPay):
 
 
 class Refund(BaseMiniPay):
-    """"""
-
+    """申请退款功能类"""
     def __init__(self, out_refund_no, total_fee, refund_fee, notify_url=None,
                  refund_desc=None, transaction_id=None, out_trade_no=None,
                  refund_account=None, **kwargs):
         super(Refund, self).__init__(**kwargs)
-        self.target = kwargs.get('target') or "https://api.mch.weixin.qq.com/secapi/pay/refund"
-        self.notify_url = notify_url
+        self.target = kwargs.get('target') or self.config['api_refund']
+        self.notify_url = notify_url or self.config['refund_notify_url']
         self.request_data = {
             'appid': self.config['app_id'],
             'mch_id': self.config['mch_id'],
@@ -134,7 +134,7 @@ class ReundQuery(BaseMiniPay):
     def __init__(self, transaction_id=None, out_trade_no=None, out_refund_no=None,
                  refund_id=None, offset=None, **kwargs):
         super(ReundQuery, self).__init__(**kwargs)
-        self.target = kwargs.get('target') or "https://api.mch.weixin.qq.com/pay/refundquery"
+        self.target = kwargs.get('target') or self.config['api_refund_query']
         self.request_data = {
             'appid': self.config['app_id'],
             'mch_id': self.config['mch_id'],
@@ -179,7 +179,7 @@ class PaymentNotification(BaseNotification):
 
 
 class RefundNotification(BaseNotification):
-    """"""
+    """退款请求处理类"""
     def __init__(self, data, **kwargs):
         super(RefundNotification, self).__init__(data, **kwargs)
 
