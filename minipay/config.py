@@ -16,3 +16,4 @@ class MiniAppsConfig(object):
     API_CLOSE_ORDER = "https://api.mch.weixin.qq.com/pay/closeorder"
     API_REFUND = "https://api.mch.weixin.qq.com/secapi/pay/refund"
     API_REFUND_QUERY = "https://api.mch.weixin.qq.com/pay/refundquery"
+    ''
