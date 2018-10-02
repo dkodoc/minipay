@@ -56,7 +56,7 @@ class BaseMiniPay(object):
         """对微信小程序支付api发起请求"""
         self._decision_rules()
         self._filter(self.request_data)
-        self._sign()
+        self.sign()
         request_data_xml = self.dict_to_xml(self.request_data)
 
         if self.target is None:
@@ -174,7 +174,7 @@ class BaseMiniPay(object):
                 filtered_data[key] = value
         self.request_data = filtered_data
 
-    def _sign(self, data=None):
+    def sign(self, data=None):
         """对data字典进行签名,
         签名规则见小程序文档签名规则
         """
@@ -223,7 +223,7 @@ class BaseNotification(object):
         self.mode = kwargs.get('mode') or self.config['mode']
         self.model = kwargs.get('model')
 
-    def _sign(self, data=None):
+    def sign(self, data=None):
         if data is None:
             data = self.response_data
 
@@ -240,10 +240,10 @@ class BaseNotification(object):
         sign = sign.hexdigest().upper()
         return sign
 
-    def _verify_sign(self):
-        server_sign = self.response_data.pop('sign')
-        local_sign = self._sign()
-        if server_sign == local_sign:
+    def _verifysign(self):
+        serversign = self.response_data.pop('sign')
+        localsign = self.sign()
+        if serversign == localsign:
             return True
         return False
 
@@ -261,7 +261,7 @@ class BaseNotification(object):
         if self.is_finish:
             return self._successful_formatted()
 
-        if self._verify_sign():
+        if self._verifysign():
             self._store()
             return self._successful_formatted()
         return self._failing_formatted('sign invaild.')
