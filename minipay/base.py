@@ -21,7 +21,8 @@ class BaseMiniPay(object):
             'payment_notify_url': None,
             'refund_notify_url': None,
             'default_mode': None,
-            'defailt_method': None,
+            'default_model': None,
+            'default_method': None,
             'api_unified_order': None,
             'api_order_query': None,
             'api_close_order': None,
@@ -31,7 +32,7 @@ class BaseMiniPay(object):
         self.config_from_object(MiniAppsConfig)
         self.target = None
         self.notify_url = None
-        self.method = kwargs.get('method') or self.config['defailt_method']
+        self.method = kwargs.get('method') or self.config['default_method']
         self.request_data = dict()
         self.response_data = dict()
         self.error = dict()
@@ -139,7 +140,7 @@ class BaseMiniPay(object):
         for key, value in data.items():
             sub_node = dom.createElement(key)
             root.appendChild(sub_node)
-            text = dom.createTextNode(value)
+            text = dom.createTextNode(str(value))
             sub_node.appendChild(text)
 
         return dom.toprettyxml(encoding='utf-8')

@@ -10,6 +10,7 @@ class MiniAppsConfig(object):
     PAYMENT_NOTIFY_URL = None
     REFUND_NOTIFY_URL = None
     DEFAULT_MODE = 'ignore'
+    DEFAULT_MODEL = None
     DEFAULT_METHOD = 'post'
     API_UNIFIED_ORDER = "https://api.mch.weixin.qq.com/pay/unifiedorder"
     API_ORDER_QUERY = "https://api.mch.weixin.qq.com/pay/orderquery"
