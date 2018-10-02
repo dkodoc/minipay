@@ -198,5 +198,8 @@ class RefundNotification(BaseNotification):
         for k, v in encrypted_dict.items():
             self.response_data[k] = v
         self.response_data.pop('req_info')
-        print('解密:', self.response_data)
+        print('refund notification decrypt:', self.response_data)
+
+    def _decision_rules(self):
+        self.decrypt()
 

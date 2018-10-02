@@ -39,6 +39,10 @@
 
 默认的请求方法：get 或者 post
 
+### DEFAULT_MODEL
+
+默认的ORM模型
+
 ### API_UNIFIED_ORDER
 
 微信小程序统一下单接口

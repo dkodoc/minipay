@@ -255,9 +255,10 @@ class BaseNotification(object):
     def decrypt(self):
         pass
 
-    def handle(self):
-        self.decrypt()
+    def _decision_rules(self):
+        pass
 
+    def handle(self):
         if self.is_finish:
             return self._successful_formatted()
 
