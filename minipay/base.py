@@ -18,6 +18,8 @@ class BaseMiniPay(object):
             'secret': None,
             'nonce_str': None,
             'key': None,
+            'cert': None,
+            'cert_key': None,
             'payment_notify_url': None,
             'refund_notify_url': None,
             'default_mode': None,
@@ -36,6 +38,7 @@ class BaseMiniPay(object):
         self.request_data = dict()
         self.response_data = dict()
         self.error = dict()
+        self.options = dict()
         self.model = kwargs.get('model')
         self.mode = kwargs.get('mode') or self.config['default_mode']
 
@@ -62,9 +65,9 @@ class BaseMiniPay(object):
         if self.target is None:
             raise TargetError("object's target attribute must be a url.")
         if self.method == 'post':
-            resp_xml = requests.post(self.target, request_data_xml)
+            resp_xml = requests.post(self.target, request_data_xml, **self.options)
         elif self.method == 'get':
-            resp_xml = requests.get(self.target, request_data_xml)
+            resp_xml = requests.get(self.target, request_data_xml, **self.options)
         else:
             raise MethodError("object's method attribute must be 'post' or 'get'.")
 

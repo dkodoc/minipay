@@ -103,6 +103,9 @@ class Refund(BaseMiniPay):
         super(Refund, self).__init__(**kwargs)
         self.target = kwargs.get('target') or self.config['api_refund']
         self.notify_url = notify_url or self.config['refund_notify_url']
+        self.options.setdefault(
+            'cert', (self.config['cert'], self.config['cert_key'])
+        )
         self.request_data = {
             'appid': self.config['app_id'],
             'mch_id': self.config['mch_id'],
@@ -126,14 +129,14 @@ class Refund(BaseMiniPay):
             raise TooManyArgumentError("You can only choose one from transaction_id and out_trade_no.")
 
 
-class ReundQuery(BaseMiniPay):
+class RefundQuery(BaseMiniPay):
     """
     doc: https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_5
     """
 
     def __init__(self, transaction_id=None, out_trade_no=None, out_refund_no=None,
                  refund_id=None, offset=None, **kwargs):
-        super(ReundQuery, self).__init__(**kwargs)
+        super(RefundQuery, self).__init__(**kwargs)
         self.target = kwargs.get('target') or self.config['api_refund_query']
         self.request_data = {
             'appid': self.config['app_id'],
@@ -173,13 +176,13 @@ class ReundQuery(BaseMiniPay):
 
 
 class PaymentNotification(BaseNotification):
-    """"""
+    """支付通知处理"""
     def __init__(self, data, **kwargs):
         super(PaymentNotification, self).__init__(data, **kwargs)
 
 
 class RefundNotification(BaseNotification):
-    """退款请求处理类"""
+    """退款通知处理"""
     def __init__(self, data, **kwargs):
         super(RefundNotification, self).__init__(data, **kwargs)
 

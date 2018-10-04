@@ -1,130 +1,13 @@
 # Minipay 
 
-## 配置
-配置参数存放在minipay包下的config.py文件中，配置选项有以下：
-
-### APP_ID
-
-小程序的appid
-
-### MCH_ID
-
-商户mch_id
-
-### SECRET
-
-小程序secret
-
-### NONCE_STR
-
-小程序nonce_str
-
-### KEY
-
-小程序key
-
-### PAYMENT_NOTIFY_URL
-
-支付通知回调接口
-
-### REFUND_NOTIFY_URL
-
-退款通知回调接口
-
-### DEFAULT_MODE
-
-默认的模式: ignore 不保存记录; store 保存记录，但是需要传入model值
-
-### DEFAULT_METHOD
-
-默认的请求方法：get 或者 post
-
-### DEFAULT_MODEL
-
-默认的ORM模型
-
-### API_UNIFIED_ORDER
-
-微信小程序统一下单接口
-
-### API_ORDER_QUERY
-
-微信小程序订单查询接口
-
-### API_CLOSE_ORDER
-
-微信小程序关闭订单接口
-
-### API_REFUND
-
-微信小程序申请退款接口
-
-### API_REFUND_QUERY
-
-微信小程序退款查询接口
-
-
-
-## 接口方法
-
-#### 统一下单
-
+python版本: python3
+#### 1. 安装依赖
+> 切换到项目根目录
 ```python
-import minipay
-# from minipay import UnifiedOrder
-minipay.UnifiedOrder()
+pip install -r requirements.txt
 ```
-
-
-
-### 订单查询
-
-```python
-import minipay
-minipay.OrderQuery()
-```
-
-### 关闭订单
-
-```python
-import minipay
-minipay.CloseOrder()
-```
-
-### 申请退款
-
-```python
-import minipay
-minipay.Refund()
-```
-
-### 查询退款
-
-```python
-import minipay
-minipay.RefundQuery()
-```
-
-### 支付通知处理
-
-```python
-import minipay
-minipay.PaymentNotification()
-```
-
-### 退款通知处理
-
-```python
-import minipay
-minipay.RefundNotification()
-```
-
-
-
-
-
-## 使用示例
-
+将<b>minipay</b>目录下的<b>minipay</b>包复制到你的项目中即可。
+#### 2. 使用示例
 ```python
 import minipay
 
