@@ -119,7 +119,7 @@ class BaseMiniPay(object):
     @property
     def is_fail(self):
         """判断请求和业务是否失败"""
-        return not self.request_is_successfully and not self.business_is_successfully
+        return not self.request_is_successfully or not self.business_is_successfully
 
     @property
     def request_is_successfully(self):
