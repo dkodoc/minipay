@@ -1,16 +1,19 @@
-# coding: utf-8
 import re
 import base64
 from hashlib import md5
 from Crypto.Cipher import AES
-from minipay.exceptions import OpenidError, TooManyArgumentError, ProductIdError
+
+from minipay.exceptions import (
+    OpenidError,
+    TooManyArgumentError,
+    ProductIdError
+)
 from minipay.base import BaseMiniPay, BaseNotification
 
 
 class UnifiedOrder(BaseMiniPay):
     """
-    小程序统一下单功能
-    小程序支付官方文档链接: https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_1
+    doc: https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_1
     """
 
     def __init__(self, out_trade_no, body, total_fee,
@@ -57,8 +60,6 @@ class UnifiedOrder(BaseMiniPay):
 
 
 class OrderQuery(BaseMiniPay):
-    """订单查询功能类"""
-
     def __init__(self, out_trade_no=None, transaction_id=None, **kwargs):
         super(OrderQuery, self).__init__(**kwargs)
         self.target = kwargs.get('target') or self.config['api_order_query']
@@ -81,7 +82,6 @@ class OrderQuery(BaseMiniPay):
 
 
 class CloseOrder(BaseMiniPay):
-    """关闭订单功能类"""
     def __init__(self, out_trade_no, **kwargs):
         super(CloseOrder, self).__init__(**kwargs)
         self.target = kwargs.get('target') or self.config['api_close_order']
@@ -96,7 +96,6 @@ class CloseOrder(BaseMiniPay):
 
 
 class Refund(BaseMiniPay):
-    """申请退款功能类"""
     def __init__(self, out_refund_no, total_fee, refund_fee, notify_url=None,
                  refund_desc=None, transaction_id=None, out_trade_no=None,
                  refund_account=None, **kwargs):
@@ -176,32 +175,31 @@ class RefundQuery(BaseMiniPay):
 
 
 class PaymentNotification(BaseNotification):
-    """支付通知处理"""
     def __init__(self, data, **kwargs):
         super(PaymentNotification, self).__init__(data, **kwargs)
 
 
 class RefundNotification(BaseNotification):
-    """退款通知处理"""
+    """process refund notification process class"""
     def __init__(self, data, **kwargs):
         super(RefundNotification, self).__init__(data, **kwargs)
 
     def decrypt(self):
-        # 对加密串A做BASE64解码，得到加密串B
+        """
+         base64 decoding the encrypted string req_info to get b,
+         md5 encoding b to get md5_key
+        """
         b = base64.b64decode(self.response_data.get('req_info').encode('utf-8'))
-        # 对商户KEY做md5，得到32位key_1
         md5_key = md5(self.config['key'].encode('utf-8')).hexdigest()
 
         aes = AES.new(md5_key.encode('utf-8'), AES.MODE_ECB)
         encrypted_text = aes.decrypt(b)
         pattern = re.compile('<root>.*</root>', flags=re.S)
         encrypted_text = pattern.match(encrypted_text.decode('utf-8')).group()
-        # 得到一个字符串，里面应该是包含xml格式的数据，所以需要转换
         encrypted_dict = BaseMiniPay.xml_to_dict(encrypted_text, root='root')
         for k, v in encrypted_dict.items():
             self.response_data[k] = v
         self.response_data.pop('req_info')
-        print('refund notification decrypt:', self.response_data)
 
     def _decision_rules(self):
         self.decrypt()

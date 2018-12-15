@@ -1,7 +1,4 @@
-class MiniAppsConfig(object):
-    """
-    MiniApps config
-    """
+class MiniAppsConfig:
     APP_ID = None
     MCH_ID = None
     SECRET = None
