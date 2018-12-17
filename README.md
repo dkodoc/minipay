@@ -114,7 +114,7 @@ refund = minipay.Refund(
     total_fee=total_fee,
     refund_fee=refund_fee
     )
-response = refund.request()
+response = refund.request(cert=(refund.config["cert"], refund.config["cert_key"]))
 if refund.is_success:
     pass
 else:
