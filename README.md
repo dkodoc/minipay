@@ -1,23 +1,24 @@
 # Minipay 
 
 python版本: python3
-#### 1. 安装依赖
+#### 1. 安装包
 > 切换到项目根目录
 ```bash
-pip install -r requirements.txt
+python setup.py install
 ```
 > config.py配置，使用前请配置minipay/config.py文件
 ```python
-APP_ID = None # 小程序appid
-MCH_ID = None # 商家mch_id
-SECRET = None # 小程序secret
-NONCE_STR = None # 小程序随机字符串
-KEY = None # 小程序key，用于解密微信退款通知发来的加密字符串
+from minipay.config import MiniAppsConfig
+MiniAppsConfig.APP_ID = None # 小程序appid
+MiniAppsConfig.MCH_ID = None # 商家mch_id
+MiniAppsConfig.SECRET = None # 小程序secret
+MiniAppsConfig.NONCE_STR = None # 小程序随机字符串
+MiniAppsConfig.KEY = None # 小程序key，用于解密微信退款通知发来的加密字符串
 
 # 支付通知和退款通知回调接口，根据自己的后台接口填写
 # 比如 https://www.xxxx.com/api/payment/notice
-PAYMENT_NOTIFY_URL = None
-REFUND_NOTIFY_URL = None
+MiniAppsConfig.PAYMENT_NOTIFY_URL = None
+MiniAppsConfig.REFUND_NOTIFY_URL = None
 
 
 # 微信退款需要用到的商户证书，没有配置的话请求退款会出错
@@ -25,17 +26,17 @@ REFUND_NOTIFY_URL = None
 # 例如
 # CERT = '/appclient.pem'
 # CERT_KEY = '/appclient_key.pem'
-CERT = ''
-CERT_KEY = ''
+MiniAppsConfig.CERT = ''
+MiniAppsConfig.CERT_KEY = ''
 
 # 默认模式， 目前有 ignore 和 store， store则必须提供ORM模型类用来保存请求和响应记录, ignore模式不保存记录
-DEFAULT_MODE = 'ignore'
+MiniAppsConfig.DEFAULT_MODE = 'ignore'
 
 # 默认的ORM模型类，可以到用的时候再填
-DEFAULT_MODEL = None
+MiniAppsConfig.DEFAULT_MODEL = None
 
 # 默认请求方法 post or get
-DEFAULT_METHOD = 'post'
+MiniAppsConfig.DEFAULT_METHOD = 'post'
 
 # 如果微信接口不更新，下面的不用更改
 API_UNIFIED_ORDER = "https://api.mch.weixin.qq.com/pay/unifiedorder"
