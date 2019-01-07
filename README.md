@@ -1,12 +1,13 @@
 # Minipay 
 
 python版本: python3
+#### 用django框架实现的简单示例：https://github.com/dkodoc/minipay_demo
 #### 1. 安装包
 > 切换到项目根目录
 ```bash
 python setup.py install
 ```
-> config.py配置，使用前请配置minipay/config.py文件
+> config.py配置
 ```python
 from minipay.config import MiniAppsConfig
 MiniAppsConfig.APP_ID = None # 小程序appid
