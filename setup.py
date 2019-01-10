@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name="minipay",
-    version="1.2",
+    version="1.3",
     keywords=("wechat", "minipay"),
     description="微信小程序支付简易SDK",
     author="dkodoc",
