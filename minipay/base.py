@@ -27,6 +27,7 @@ class BaseMiniPay(object):
         self.options = dict()
         self.model = kwargs.get('model')
         self.mode = kwargs.get('mode')
+        self.request_data_xml = None
         self.config_from_object(MiniAppsConfig)
 
     def initialize(self):
@@ -50,6 +51,7 @@ class BaseMiniPay(object):
         self._filter(self.request_data)
         self.sign()
         request_data_xml = self.dict_to_xml(self.request_data)
+        self.request_data_xml = request_data_xml
 
         if self.target is None:
             raise TargetError("object's target attribute must be a url.")
