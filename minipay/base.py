@@ -18,21 +18,17 @@ class BaseMiniPay(object):
             'default_method': None, 'api_unified_order': None, 'api_order_query': None,
             'api_close_order': None, 'api_refund': None, 'api_refund_query': None
         }
+        self.config_from_object(MiniAppsConfig)
         self.target = None
         self.notify_url = None
-        self.method = kwargs.get("method")
+        self.method = kwargs.get("method") or self.config['default_method']
         self.request_data = dict()
         self.response_data = dict()
         self.error = dict()
         self.options = dict()
         self.model = kwargs.get('model')
-        self.mode = kwargs.get('mode')
+        self.mode = kwargs.get('mode') or self.config['default_mode']
         self.request_data_xml = None
-        self.config_from_object(MiniAppsConfig)
-
-    def initialize(self):
-        self.method = self.config['default_method']
-        self.mode = self.config['default_mode']
 
     def config_from_object(self, config_obj):
         for attr, value in config_obj.__dict__.items():
@@ -41,7 +37,6 @@ class BaseMiniPay(object):
             lowed_attr = attr.lower()
             if lowed_attr in self.config.keys():
                 self.config[lowed_attr] = value
-        self.initialize()
 
     def _decision_rules(self):
         pass

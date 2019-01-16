@@ -37,7 +37,7 @@ class UnifiedOrder(BaseMiniPay):
             'out_trade_no': out_trade_no,
             'fee_type': fee_type,
             'total_fee': total_fee,
-            'spbill_create_ip': spbill_create_ip or '47.94.162.104',
+            'spbill_create_ip': spbill_create_ip or '0.0.0.0',
             'time_start': time_start,
             'time_expire': time_expire,
             'goods_tag': goods_tag,
