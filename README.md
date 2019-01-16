@@ -1,19 +1,22 @@
 # Minipay 
 
-python版本: python3
+#### python版本: python3
+
 #### 用django框架实现的简单示例：https://github.com/dkodoc/minipay_demo
-#### 1. 安装包
+
+#### 安装
 方法1
 > 切换到项目根目录
 ```bash
 python setup.py install
 ```
+
 方法2
 ```bash
 pip install minipay
 ```
 
-> config.py配置
+#### config.py配置
 ```python
 from minipay.config import MiniAppsConfig
 MiniAppsConfig.APP_ID = None # 小程序appid
@@ -52,7 +55,8 @@ API_CLOSE_ORDER = "https://api.mch.weixin.qq.com/pay/closeorder"
 API_REFUND = "https://api.mch.weixin.qq.com/secapi/pay/refund"
 API_REFUND_QUERY = "https://api.mch.weixin.qq.com/pay/refundquery"
 ```
-> API
+
+#### API
 #### 统一下单
 ```python
 import minipay

@@ -2,11 +2,11 @@ from setuptools import setup
 
 setup(
     name="minipay",
-    version="0.0.3",
+    version="0.0.6",
     keywords=["wechat", "minipay", "mini program", "pay", "sdk"],
     description="微信小程序支付简易SDK",
     author="dkodoc",
-    long_description=open("README.md", encoding="utf-8").read(),
+    long_description=open("README.rst", encoding="utf-8").read(),
     license="MIT",
     url="https://github.com/dkodoc/minipay",
     author_email="tjm0510@163.com",
