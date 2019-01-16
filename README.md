@@ -3,10 +3,16 @@
 python版本: python3
 #### 用django框架实现的简单示例：https://github.com/dkodoc/minipay_demo
 #### 1. 安装包
+方法1
 > 切换到项目根目录
 ```bash
 python setup.py install
 ```
+方法2
+```bash
+pip install minipay
+```
+
 > config.py配置
 ```python
 from minipay.config import MiniAppsConfig
@@ -173,6 +179,4 @@ def refund_notification(request):
     return HttpResponse(response, content_type='application/xml')
 
 ```
-
-将<b>minipay</b>目录下的<b>minipay</b>包复制到你的项目中即可。
 
