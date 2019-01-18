@@ -1,3 +1,4 @@
+import time
 from hashlib import md5
 from xml.dom import minidom
 import xml.etree.ElementTree
@@ -40,6 +41,20 @@ class BaseMiniPay(object):
 
     def _decision_rules(self):
         pass
+
+    def mini_formatted(self):
+        """https://developers.weixin.qq.com/miniprogram/dev/api/wx.requestPayment.html"""
+        response = {
+            'appId': self.response_data.get('appid'),
+            'timeStamp': str(int(time.time())),
+            'nonceStr': self.config['nonce_str'],
+            'package': 'prepay_id=%s' % self.response_data.get('prepay_id'),
+            'signType': 'MD5',
+        }
+        sign = self.sign(response)
+        response['paySign'] = sign
+        response.pop('appId')
+        return response
 
     def request(self):
         self._decision_rules()
