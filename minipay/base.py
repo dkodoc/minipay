@@ -1,3 +1,5 @@
+import json
+import decimal
 import time
 from hashlib import md5
 from xml.dom import minidom
@@ -8,6 +10,13 @@ from minipay.config import MiniAppsConfig
 from minipay.exceptions import ModelError, ModeError, TargetError, MethodError
 
 __all__ = ['BaseMiniPay', 'BaseNotification']
+
+
+class DecimalEncoder(json.JSONEncoder):
+    def default(self, o):
+        if isinstance(o, decimal.Decimal):
+            return int(float(o) * 100)
+        super(DecimalEncoder, self).default(o)
 
 
 class BaseMiniPay(object):
@@ -61,7 +70,7 @@ class BaseMiniPay(object):
         self._filter(self.request_data)
         self.sign()
         request_data_xml = self.dict_to_xml(self.request_data)
-        self.request_data_xml = request_data_xml
+        self.request_data_xml = request_data_xml.decode()
 
         if self.target is None:
             raise TargetError("object's target attribute must be a url.")
@@ -125,6 +134,9 @@ class BaseMiniPay(object):
         if not isinstance(data, dict):
             raise TypeError("data object must be a dict type.")
 
+        data = json.dumps(data, ensure_ascii=False, cls=DecimalEncoder)
+        data = json.loads(data)
+
         dom = minidom.Document()
         root = dom.createElement('xml')
         dom.appendChild(root)
@@ -158,6 +170,8 @@ class BaseMiniPay(object):
         filtered_data = {}
         for key, value in self.request_data.items():
             if value and value != "":
+                if isinstance(value, decimal.Decimal):
+                    value = int(float(value) * 100)
                 filtered_data[key] = value
         self.request_data = filtered_data
 
@@ -242,11 +256,13 @@ class BaseNotification(object):
         pass
 
     def handle(self):
+        self._decision_rules()
         if self.is_finish:
             return self._successful_formatted()
 
         if self._verifysign():
-            self._store()
+            if self.mode == 'store':
+                self._store()
             return self._successful_formatted()
         return self._failing_formatted('sign invaild.')
 
