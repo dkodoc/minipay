@@ -205,17 +205,22 @@ API
         response = notice.handle()
         return HttpResponse(response, content_type='application/xml')
 
-BaseMiniPay
-^^^^^^^^^^^
 
+BaseMiniPay
 BaseMiniPay对象，例如以上的unified、notice、close\_order等。有一些属性和方法可以使用。
+
 ###### .request()
 发起请求动作，返回\ *.response\_data*\ ，如果请求业务失败，则返回\ *.error*
+
 ###### .is\_success 请求业务是否成功，成功返回True，失败返回False。
-###### .is\_fail 请求业务是否失败，是返回True，否返回False。 ######
-.response\_data 微信端返回的响应内容，为dict类型。 ###### .error
-dict类型，当请求失败时，有错误码code键和错误说明desc键。{"code": "",
-"desc": ""}。 如果请求成功，则为空字典> ###### .request\_data\_xml
-调用\ *.request*\ 之后，再调用这个属性。它返回本次请求的内容（xml格式），一般用于在微信签名校验工具
-###### .mini\_formatted()
-返回一个特定格式的字典，用于给小程序wx.requestPaymentAPI调起支付。详情见：https://developers.weixin.qq.com/miniprogram/dev/api/wx.requestPayment.html
+
+###### .is\_fail 请求业务是否失败，是返回True，否返回False。
+
+###### .response\_data 微信端返回的响应内容，为dict类型。
+
+###### .error dict类型，当请求失败时，有错误码code键和错误说明desc键。{"code": "",
+"desc": ""}。 如果请求成功，则为空字典
+
+###### .request\_data\_xml 调用\ *.request*\ 之后，再调用这个属性。它返回本次请求的内容（xml格式），一般用于在微信签名校验工具
+
+###### .mini\_formatted() 返回一个特定格式的字典，用于给小程序wx.requestPaymentAPI调起支付。详情见：https://developers.weixin.qq.com/miniprogram/dev/api/wx.requestPayment.html

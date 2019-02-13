@@ -18,6 +18,7 @@ class MiniAppsConfig:
     CERT_KEY = ''
 
     # 默认模式， 目前有 ignore 和 store， store则必须提供ORM模型类用来保存请求和响应记录
+    # 目前之支持Django2.0以上版本
     DEFAULT_MODE = 'ignore'
 
     # 默认的ORM模型类，可以到用的时候再填
@@ -25,6 +26,9 @@ class MiniAppsConfig:
 
     # 默认请求方法 post or get
     DEFAULT_METHOD = 'post'
+
+    # 是否使用异步请求
+    ASYNC = False
 
     # 如果微信接口不更新，下面的不用更改
     API_UNIFIED_ORDER = "https://api.mch.weixin.qq.com/pay/unifiedorder"

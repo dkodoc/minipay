@@ -2,13 +2,13 @@ from setuptools import setup
 
 setup(
     name="minipay",
-    version="0.0.13",
+    version="0.1.1",
     keywords=["wechat", "minipay", "mini program", "pay", "sdk"],
-    description="微信小程序支付简易SDK",
-    author="dkodoc",
+    description="微信小程序支付SDK",
+    author="tanjm",
     long_description=open("README.rst", encoding="utf-8").read(),
     license="MIT",
-    url="https://github.com/dkodoc/minipay",
+    url="https://github.com/tanjm/minipay",
     author_email="tjm0510@163.com",
     packages=["minipay"],
     include_package_data=True,

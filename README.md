@@ -177,6 +177,16 @@ def refund_notification(request):
     return HttpResponse(response, content_type='application/xml')
 
 ```
+#### 支持在异步框架中使用
+```python
+import minipay
+
+async def pay(request):
+    unified = minipay.UnifiedOrder(out_trade_no=1111, total_fee='12.00', body='test')
+    response = await unified.arequest()
+    # ...
+
+```
 #### BaseMiniPay
 BaseMiniPay对象，例如以上的unified、notice、close_order等。有一些属性和方法可以使用。
 ###### .request()

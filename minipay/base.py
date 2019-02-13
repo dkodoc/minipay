@@ -6,6 +6,7 @@ from xml.dom import minidom
 import xml.etree.ElementTree
 
 import requests
+import aiohttp
 from minipay.config import MiniAppsConfig
 from minipay.exceptions import ModelError, ModeError, TargetError, MethodError
 
@@ -26,7 +27,8 @@ class BaseMiniPay(object):
             'key': None, 'cert': None, 'cert_key': None, 'payment_notify_url': None,
             'refund_notify_url': None, 'default_mode': None, 'default_model': None,
             'default_method': None, 'api_unified_order': None, 'api_order_query': None,
-            'api_close_order': None, 'api_refund': None, 'api_refund_query': None
+            'api_close_order': None, 'api_refund': None, 'api_refund_query': None,
+            'async': None
         }
         self.config_from_object(MiniAppsConfig)
         self.target = None
@@ -83,6 +85,34 @@ class BaseMiniPay(object):
 
         resp_xml.encoding = 'utf-8'
         self.response_data = self.xml_to_dict(resp_xml.text)
+
+        if self.mode == 'store':
+            try:
+                self._store()
+            except (ModelError, ModeError) as err:
+                print(err)
+        return self._handle_response()
+
+    async def arequest(self):
+        self._decision_rules()
+        self._filter(self.request_data)
+        self.sign()
+        request_data_xml = self.dict_to_xml(self.request_data)
+        self.request_data_xml = request_data_xml.decode()
+
+        if self.target is None:
+            raise TargetError("object's target attribute must be a url.")
+
+        async with aiohttp.ClientSession() as client:
+            if self.method == 'post':
+                resp_xml = await client.post(self.target, data=request_data_xml, **self.options)
+            elif self.method == 'get':
+                resp_xml = await client.get(self.target, params=request_data_xml, **self.options)
+            else:
+                raise MethodError("object's method attribute must be 'post' or 'get'.")
+
+        resp_xml = await resp_xml.text()
+        self.response_data = self.xml_to_dict(resp_xml)
 
         if self.mode == 'store':
             try:
