@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="minipay",
-    version="0.1.1",
+    version="0.1.2",
     keywords=["wechat", "minipay", "mini program", "pay", "sdk"],
     description="微信小程序支付SDK",
     author="tanjm",
@@ -13,7 +13,7 @@ setup(
     packages=["minipay"],
     include_package_data=True,
     platforms="any",
-    install_requires=["requests", "pycryptodome"],
+    install_requires=["requests", "pycryptodome", "aiohttp"],
     classifiers=[
         "Environment :: Web Environment",
         "Intended Audience :: Developers",
