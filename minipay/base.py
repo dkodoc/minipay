@@ -249,6 +249,7 @@ class BaseNotification(object):
         }
         self.mode = kwargs.get('mode') or self.config['mode']
         self.model = kwargs.get('model')
+        self.field = "out_trade_no"
 
     def sign(self, data=None):
         if data is None:
@@ -271,11 +272,6 @@ class BaseNotification(object):
         serversign = self.response_data.pop('sign')
         localsign = self.sign()
         if serversign == localsign:
-            return True
-        return False
-
-    def _verify_fee(self):
-        if self.model is None:
             return True
         return False
 
@@ -328,5 +324,8 @@ class BaseNotification(object):
     def is_finish(self):
         if self.model is None:
             return False
+        if hasattr(self.model, self.field):
+            if self.model.objects.filter(out_trade_no=self.field).exists():
+                return True
         return True
 
