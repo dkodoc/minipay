@@ -327,5 +327,5 @@ class BaseNotification(object):
         if hasattr(self.model, self.field):
             if self.model.objects.filter(out_trade_no=self.field).exists():
                 return True
-        return True
+        return False
 
