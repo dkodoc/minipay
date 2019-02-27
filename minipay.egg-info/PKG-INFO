@@ -1,6 +1,6 @@
 Metadata-Version: 1.1
 Name: minipay
-Version: 0.1.4
+Version: 0.1.5
 Summary: 微信小程序支付SDK
 Home-page: https://github.com/tanjm/minipay
 Author: tanjm
@@ -243,6 +243,5 @@ Classifier: Topic :: Utilities
 Classifier: Topic :: Internet
 Classifier: Topic :: Software Development :: Libraries :: Python Modules
 Classifier: Programming Language :: Python
-Classifier: Programming Language :: Python :: 3.5
 Classifier: Programming Language :: Python :: 3.6
 Classifier: Programming Language :: Python :: 3.7

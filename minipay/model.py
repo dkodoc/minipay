@@ -203,4 +203,8 @@ class RefundNotification(BaseNotification):
 
     def _decision_rules(self):
         self.decrypt()
+    
+    def _verifysign(self):
+        """退款通知无需验证签名"""
+        return True
 
